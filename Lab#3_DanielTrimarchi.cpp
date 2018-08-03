@@ -45,7 +45,34 @@ void Factorizacion(){
 }
 
 void Seno(){
-
+	long double seno=0,coseno=0,num,dem,factorial=1,x,potencia,val_x,ang,fac_2=1,den;
+	do{
+	cout<<"Ingrese un Angulo[0-N]: ";
+	cin>>x;	
+	ang=x*(PI/180);
+	cout<<x<< " X"<<endl;
+	}while(x<0);
+	for(long double i=0;i<30;i++){	
+		//num=pow(-1,i);
+		den=2*i;
+		dem=(2*i)+1;
+		potencia=(2*i)+1;		
+										
+		for(long double j=1;j<=dem;j++){
+			factorial*=j;	
+			//cout<<factorial;		
+		}
+		for(long double j=1;j<=(den);j++){
+			fac_2*=j;	
+			//cout<<factorial;		
+		}			
+			seno+=((pow(-1,i))*(pow(ang,potencia)))/factorial;
+			coseno+=((pow(-1,i))*(pow(ang,2*i)))/fac_2;				
+				factorial=1;
+				fac_2=1;
+	}
+	cout<<"Seno: "<<seno<<endl;
+	cout<<"Coseno: "<<coseno<<endl;
 
 }
 
@@ -61,7 +88,7 @@ int main(){
 		cout <<endl;
 		cout <<"		MENU PRINCIPAL"<<endl
 		     <<"1. Factorización"<<endl
-		     <<"2. Seno"<<endl
+		     <<"2. Seno & Coseno"<<endl
 		     <<"3. Triangulo Pascal"<<endl
 		     <<"4. Salir"<<endl
 		     <<"Escoja su respuesta: "<<endl;
