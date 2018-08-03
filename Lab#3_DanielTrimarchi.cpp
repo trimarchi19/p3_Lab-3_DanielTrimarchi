@@ -17,7 +17,7 @@ using std::setw;
 
 
 void Factorizacion(){
-	int* arreglo =new int[3];
+	double* arreglo =new double[3];
 		cout <<"Factoizacion Ax^2 + Bx + C"<<endl;
 		cout <<"Ingrese el Primer Digito [A]: ";
 		cin >> arreglo[0];
@@ -25,28 +25,23 @@ void Factorizacion(){
 		cin >> arreglo[1];
 		cout <<"Ingrese el tercer Digito [C]: ";
 		cin >> arreglo[2];
+
+	// Ax^2 + bx + c;
+	double a=arreglo[0],b=arreglo[1],c=arreglo[2];
+	double verificador=(b*b)-(4*a*c);
+	cout<<verificador<<endl;
+	if(verificador>=0){
+		double raiz=sqrt(verificador);
+		double cuadratica_pos=(-b+raiz)/(2*a);
+		double negativa=(-b-raiz)/(2*a);	
+	cout<<"(x + ("<<cuadratica_pos*-1<<"))(X + ("<<negativa*-1<<"))"<<endl;		
 	
-	if(arreglo[0]==1){
-		if(arreglo[2]==0){
-			cout <<"X^2 + "<<arreglo[1]<<"X"<<endl;
-		}else if(arreglo[2]!=0){
-			cout <<"X^2 + "<<arreglo[1]<<"X"<<endl;
 
-		}
-
-	}else if(){
-
-	}else if(){
+	}else if(verificador<0){
+		cout<<"Es un Numero Imaginario. No se Puede Factorizar";
 
 	}
-		
-	
-	//cout<<*(arreglo+1)<<endl;// == aregglo[2];
-		
-
-	delete[] arreglo;
-
-
+	delete[] arreglo; 
 }
 
 void Seno(){
