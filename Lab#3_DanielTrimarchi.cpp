@@ -52,7 +52,7 @@ void Seno(){
 	ang=x*(PI/180);
 	cout<<x<< " X"<<endl;
 	}while(x<0);
-	for(long double i=0;i<30;i++){	
+	for(long double i=0;i<20;i++){	
 		//num=pow(-1,i);
 		den=2*i;
 		dem=(2*i)+1;
@@ -76,12 +76,44 @@ void Seno(){
 
 }
 
-
 void Pascal(){
+	int filas=0,fac_i=1,fac_j=1,num,fac=1;
+	cout<< "Ingrese el Numero de Filas: ";
+	cin >> filas;
+	//int array[0];
+	for(int i=0;i<filas;i++){
+	cout<<setw(50-i);
 
-
-
+		//factorial n
+		for(int k=1;k<=i;k++){
+			fac_i*=k;
+				}
+				
+		for(int j=0;j<=i;j++){
+				//factorial r
+				for(int k=1;k<=j;k++){
+				fac_j*=k;
+				}
+				//factorial n-r
+				for(int k=1;k<=i-j;k++){
+				fac*=k;
+				}
+				num=(fac_i)/((fac_j)*fac);
+				if(num%2==0){
+				cout<<"* ";
+				}else if(num%2!=0){
+				cout<<"o ";
+				}
+				fac_j=1;
+				fac=1;
+		}
+		cout<<endl;
+		fac_i=1;
+		}
 }
+
+
+
 int main(){
 	int resp=0;
 	do{
